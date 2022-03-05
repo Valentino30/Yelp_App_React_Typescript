@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import List from "./shared/List";
+
 import { useSearch } from "./hooks/search";
 
 function App() {
@@ -25,15 +27,8 @@ function App() {
       <h1>Yelp App</h1>
       <form onSubmit={handleSubmit}>
         <input value={location} onChange={handleChange} />
-        <button type="submit">Search</button>
       </form>
-      {searchResults && (
-        <ul>
-          {searchResults.map(({ id, name }) => (
-            <li key={id}>{name}</li>
-          ))}
-        </ul>
-      )}
+      {searchResults && <List listItems={searchResults} />}
     </div>
   );
 }

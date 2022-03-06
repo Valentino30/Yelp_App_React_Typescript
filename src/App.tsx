@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import List from "./shared/List";
 import Form from "./shared/Form";
+import Header from "./shared/Header";
+import Wrapper from "./shared/Wrapper";
 
 import { useSearch } from "./hooks/search";
-import Header from "./shared/Header";
 
 function App() {
   const { search, isSearching, searchResults } = useSearch();
@@ -21,7 +22,7 @@ function App() {
   if (isSearching) return <Header>Loading...</Header>;
 
   return (
-    <div style={{ maxWidth: 350, margin: "auto" }}>
+    <Wrapper>
       <Header>Yelp App</Header>
       <Form
         value={location}
@@ -30,7 +31,7 @@ function App() {
         placeholder={"Where are you at?"}
       />
       {searchResults && <List listItems={searchResults} />}
-    </div>
+    </Wrapper>
   );
 }
 

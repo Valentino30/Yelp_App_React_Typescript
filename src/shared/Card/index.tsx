@@ -22,8 +22,8 @@ export default function CustomCard({
       <Link
         href={url}
         target="_blank"
+        underline="none"
         component={CardActionArea}
-        style={{ textDecoration: "none" }}
       >
         <CardMedia component="img" height="140" image={image_url} alt={alias} />
         <CardContent>

@@ -1,5 +1,6 @@
 import CustomCard from "../Card";
 import { SearchResultType } from "../../types/search";
+import { StyledList, StyledListItem } from "./styles";
 
 type ListPropsType = {
   listItems: [] | SearchResultType[];
@@ -7,9 +8,9 @@ type ListPropsType = {
 
 export default function List({ listItems }: ListPropsType) {
   return (
-    <ul style={{ listStyleType: "none", padding: 0 }}>
+    <StyledList>
       {listItems.map((listItem) => (
-        <li key={listItem.id} style={{ marginBottom: 10 }}>
+        <StyledListItem key={listItem.id}>
           <CustomCard
             url={listItem.url}
             name={listItem.name}
@@ -18,8 +19,8 @@ export default function List({ listItems }: ListPropsType) {
             image_url={listItem.image_url}
             review_count={listItem.review_count}
           />
-        </li>
+        </StyledListItem>
       ))}
-    </ul>
+    </StyledList>
   );
 }

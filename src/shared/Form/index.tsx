@@ -1,3 +1,5 @@
+import { StyledForm, StyledInput } from "./styles";
+
 type FormPropsType = {
   value: string;
   placeholder: string;
@@ -12,24 +14,12 @@ export default function Form({
   handleSubmit,
 }: FormPropsType) {
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "flex", flexDirection: "column" }}
-    >
-      <input
-        placeholder={placeholder}
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledInput
         value={value}
         onChange={handleChange}
-        style={{
-          margin: 4,
-          height: 30,
-          padding: 15,
-          fontSize: 16,
-          border: "none",
-          outline: "none",
-          color: "dimgrey",
-        }}
+        placeholder={placeholder}
       />
-    </form>
+    </StyledForm>
   );
 }

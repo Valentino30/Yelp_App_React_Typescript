@@ -4,6 +4,7 @@ import List from "./shared/List";
 import Form from "./shared/Form";
 
 import { useSearch } from "./hooks/search";
+import Header from "./shared/Header";
 
 function App() {
   const { search, isSearching, searchResults } = useSearch();
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <h1>Yelp App</h1>
+      <Header>Yelp App</Header>
       <Form
         value={location}
         handleChange={handleChange}

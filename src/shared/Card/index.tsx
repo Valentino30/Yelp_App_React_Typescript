@@ -7,6 +7,8 @@ import CardActionArea from "@mui/material/CardActionArea";
 
 import { SearchResultType } from "../../types/search";
 
+type CardPropsType = Omit<SearchResultType, "id">;
+
 export default function CustomCard({
   url,
   name,
@@ -14,14 +16,14 @@ export default function CustomCard({
   rating,
   image_url,
   review_count,
-}: SearchResultType) {
+}: CardPropsType) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, margin: "auto" }}>
       <Link
         href={url}
         target="_blank"
+        underline="none"
         component={CardActionArea}
-        style={{ textDecoration: "none" }}
       >
         <CardMedia component="img" height="140" image={image_url} alt={alias} />
         <CardContent>

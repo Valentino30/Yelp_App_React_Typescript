@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const api = {
   get: async (endpoint: string, queryParams: string) => {
@@ -14,4 +15,17 @@ export const api = {
     );
     return response.data;
   },
+};
+
+export const handleSearchError = (error: unknown) => {
+  if (axios.isAxiosError(error)) {
+    console.log({ response: error.response?.status });
+    if (error.response?.status === 400) {
+      return toast.error("Location not found");
+    }
+    if (!error.response) {
+      return toast.error("No internet connection");
+    }
+  }
+  toast.error("Oops! Something went wrong.");
 };

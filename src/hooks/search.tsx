@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-import { api } from "../api";
+import { api, handleSearchError } from "../api";
 import { SearchContextType } from "../types/search";
 
 const SearchContext = createContext({} as SearchContextType);
@@ -23,8 +23,9 @@ export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
       setSearchResults(businesses);
       setIsSearching(false);
     } catch (error) {
+      setSearchResults([]);
       setIsSearching(false);
-      alert("Oops! Something went wrong");
+      handleSearchError(error);
     }
   };
 

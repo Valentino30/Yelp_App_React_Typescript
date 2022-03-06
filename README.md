@@ -11,12 +11,12 @@ Here is how to get started with the project:
 
 The app will run in development mode at [http://localhost:3000](http://localhost:3000) and the page will automatically reload if you make any changes. 
 
-# Dependencies
+## Dependencies
 This project was bootstrapped using the following technologies: 
 
-- [Create React App Typescript](https://create-react-app.dev/docs/adding-typescript/).
-- [Material UI](https://mui.com/getting-started/installation/).
-- [Axios](https://axios-http.com/).
+- [Create React App Typescript](https://create-react-app.dev/docs/adding-typescript/)
+- [Material UI](https://mui.com/getting-started/installation/)
+- [Axios](https://axios-http.com/)
 
 ## Notes
 As this is just a test app, the .env file was not excluded from the repo simply to make it easier for the reviewers to launch and test the application. It is of course known not to be best practice to do so in production-ready applications.

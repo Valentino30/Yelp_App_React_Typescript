@@ -24,6 +24,7 @@ export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
       setSearchResults(businesses);
       setIsSearching(false);
     } catch (error) {
+      setSearchResults([]);
       setIsSearching(false);
       toast.error("Oops! Something went wrong");
     }

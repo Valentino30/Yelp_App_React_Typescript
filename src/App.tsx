@@ -18,15 +18,16 @@ function App() {
     search(location);
   };
 
-  if (isSearching) return <h1>Loading...</h1>;
+  if (isSearching) return <Header>Loading...</Header>;
 
   return (
-    <div>
+    <div style={{ maxWidth: 350, margin: "auto" }}>
       <Header>Yelp App</Header>
       <Form
         value={location}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        placeholder={"Where are you at?"}
       />
       {searchResults && <List listItems={searchResults} />}
     </div>

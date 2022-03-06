@@ -18,7 +18,7 @@ export default function CustomCard({
   review_count,
 }: CardPropsType) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, margin: "auto" }}>
       <Link
         href={url}
         target="_blank"

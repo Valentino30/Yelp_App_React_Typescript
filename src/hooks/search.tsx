@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { createContext, useContext, useState } from "react";
 
 import { api } from "../api";
@@ -24,7 +25,7 @@ export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
       setIsSearching(false);
     } catch (error) {
       setIsSearching(false);
-      alert("Oops! Something went wrong");
+      toast.error("Oops! Something went wrong");
     }
   };
 

@@ -3,7 +3,7 @@ import { StyledForm, StyledInput } from "./styles";
 type FormPropsType = {
   value: string;
   placeholder: string;
-  handleSubmit: () => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import isAlpha from "validator/es/lib/isAlpha";
 
 import List from "./shared/List";
 import Form from "./shared/Form";
@@ -15,8 +17,13 @@ function App() {
     setlocation(e.target.value);
   };
 
-  const handleSubmit = () => {
-    search(location);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isAlpha(location)) {
+      search(location);
+    } else {
+      toast.error("Please insert a valid location");
+    }
   };
 
   if (isSearching) return <Header>Loading...</Header>;

@@ -19,9 +19,11 @@ export const api = {
 
 export const handleSearchError = (error: unknown) => {
   if (axios.isAxiosError(error)) {
-    console.log({ response: error.response?.status });
     if (error.response?.status === 400) {
       return toast.error("Location not found");
+    }
+    if (error.response?.status === 429) {
+      return toast.error("You've hit your search limit");
     }
     if (!error.response) {
       return toast.error("No internet connection");

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import List from "./shared/List";
+import Form from "./shared/Form";
 
 import { useSearch } from "./hooks/search";
 
@@ -8,12 +9,8 @@ function App() {
   const { search, isSearching, searchResults } = useSearch();
   const [location, setlocation] = useState("");
 
-  const handleChange = ({
-    target: { value },
-  }: {
-    target: { value: string };
-  }) => {
-    setlocation(value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setlocation(e.target.value);
   };
 
   const handleSubmit = () => {
@@ -25,9 +22,11 @@ function App() {
   return (
     <div>
       <h1>Yelp App</h1>
-      <form onSubmit={handleSubmit}>
-        <input value={location} onChange={handleChange} />
-      </form>
+      <Form
+        value={location}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
       {searchResults && <List listItems={searchResults} />}
     </div>
   );

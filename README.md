@@ -17,10 +17,25 @@ Here is how to get started with the project:
 
 The app will run in development mode at [http://localhost:3000](http://localhost:3000) and the page will automatically reload if you make any changes.
 
+## Usage
+
+- Type your current location in the input field and hit enter
+- If the location is valid, Yelp's API will return 20 listings close to your location
+- Each listing will be displayed with a media card containing the listing's image, rating and review count
+- Clicking on a listing will open the corresponding Yelp's page on a new tab
+
+## Error Handling
+- Hitting enter without inputting any location will return an error (no API call)
+- Hitting enter after inputting an invalid location will return an error (API call)
+- Hitting enter without an internet connection will return an error (API call attempt)
+
 ## Dependencies
 
-This project was bootstrapped using the following technologies:
+This project relies on the following dependencies:
 
 - [Create React App Typescript](https://create-react-app.dev/docs/adding-typescript/)
+- [Styled Components](https://styled-components.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
 - [Material UI](https://mui.com/getting-started/installation/)
+- [ENV CMD](https://www.npmjs.com/package/env-cmd) 
 - [Axios](https://axios-http.com/) 

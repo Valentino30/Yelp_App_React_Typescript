@@ -13,6 +13,14 @@ export const api = {
         },
       }
     );
+    // FEEDBACK
+    // Here you're trusting Yelp to return a data object that fits your frontend requirements
+    // However, nothing ensures that Yelp won't change its data object
+    // If this were to happen, your frontend would not be able to handle it and it would crash
+    // To resolve this issue, it's possible to utilize runtime typing systems like io-ts or zod
+    // These libraries help you setup strict typing that can be used at run time
+    // So that if an API does not return what the frontend expects
+    // The frontend understands it and handles the problem with a clean error flow
     return response.data;
   },
 };

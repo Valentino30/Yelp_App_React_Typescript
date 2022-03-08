@@ -21,6 +21,8 @@ export const api = {
     // These libraries help you setup strict typing that can be used at run time
     // So that if an API does not return what the frontend expects
     // The frontend understands it and handles the problem with a clean error flow
+    // [ZOD](https://github.com/colinhacks/zod#what-is-zod)
+    // [IO-TS](https://github.com/gcanti/io-ts)
     return response.data;
   },
 };

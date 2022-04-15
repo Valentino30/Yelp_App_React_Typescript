@@ -25,6 +25,7 @@ The app will run in development mode at [http://localhost:3000](http://localhost
 - Clicking on a listing will open the corresponding Yelp's page on a new tab
 
 ## Error Handling
+
 - Hitting enter without inputting any location will return an error (no API call)
 - Hitting enter after inputting an invalid location will return an error (API call)
 - Hitting enter without an internet connection will return an error (API call attempt)
@@ -37,5 +38,13 @@ This project relies on the following dependencies:
 - [Styled Components](https://styled-components.com/)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
 - [Material UI](https://mui.com/getting-started/installation/)
-- [ENV CMD](https://www.npmjs.com/package/env-cmd) 
-- [Axios](https://axios-http.com/) 
+- [ENV CMD](https://www.npmjs.com/package/env-cmd)
+- [Axios](https://axios-http.com/)
+
+## Feedback
+
+- Overall, very clean and organized code
+- Good read me
+- Good commit history
+- Good UX in terms of error handling
+- More feedback can be found in the code by searching for the keyword // FEEDBACK
